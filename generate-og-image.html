@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerar OG Image</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f0f0f0;
+      font-family: 'Poppins', sans-serif;
+    }
+    canvas {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+    .instructions {
+      margin-top: 24px;
+      text-align: center;
+      color: #354857;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .instructions strong { color: #6FA5AA; }
+    button {
+      margin-top: 16px;
+      padding: 12px 32px;
+      background: #6FA5AA;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    button:hover { background: #354857; }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="canvas" width="1200" height="630"></canvas>
+  <div class="instructions">
+    <p>Preview da imagem de compartilhamento (1200x630px)</p>
+    <p>Clique no botao abaixo para baixar. Depois, salve como <strong>assets/og-image.jpg</strong></p>
+    <button onclick="download()">Baixar og-image.jpg</button>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const perfil = new Image();
+    perfil.crossOrigin = 'anonymous';
+    perfil.src = 'assets/perfil.jpg';
+
+    const logo = new Image();
+    logo.crossOrigin = 'anonymous';
+    logo.src = 'assets/logo.png';
+
+    let loaded = 0;
+    function onLoad() {
+      loaded++;
+      if (loaded === 2) draw();
+    }
+    perfil.onload = onLoad;
+    logo.onload = onLoad;
+    perfil.onerror = function() { loaded++; if (loaded === 2) draw(); };
+    logo.onerror = function() { loaded++; if (loaded === 2) draw(); };
+
+    function draw() {
+      /* Fundo gradiente */
+      const grad = ctx.createLinearGradient(0, 0, 1200, 630);
+      grad.addColorStop(0, '#E8F0F1');
+      grad.addColorStop(0.5, '#C4D8DC');
+      grad.addColorStop(1, '#9DC3C7');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1200, 630);
+
+      /* Circulos decorativos */
+      ctx.globalAlpha = 0.06;
+      ctx.fillStyle = '#354857';
+      ctx.beginPath();
+      ctx.arc(1100, 80, 180, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(100, 550, 120, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.globalAlpha = 1;
+
+      /* Foto de perfil circular */
+      if (perfil.complete && perfil.naturalWidth > 0) {
+        const cx = 350;
+        const cy = 315;
+        const r = 180;
+
+        /* Borda */
+        const borderGrad = ctx.createLinearGradient(cx - r, cy - r, cx + r, cy + r);
+        borderGrad.addColorStop(0, '#6FA5AA');
+        borderGrad.addColorStop(1, '#354857');
+        ctx.beginPath();
+        ctx.arc(cx, cy, r + 5, 0, Math.PI * 2);
+        ctx.fillStyle = borderGrad;
+        ctx.fill();
+
+        /* Sombra */
+        ctx.save();
+        ctx.shadowColor = 'rgba(53, 72, 87, 0.3)';
+        ctx.shadowBlur = 40;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 8;
+        ctx.beginPath();
+        ctx.arc(cx, cy, r, 0, Math.PI * 2);
+        ctx.clip();
+
+        /* Imagem */
+        const scale = Math.max((r * 2) / perfil.naturalWidth, (r * 2) / perfil.naturalHeight);
+        const w = perfil.naturalWidth * scale;
+        const h = perfil.naturalHeight * scale;
+        ctx.drawImage(perfil, cx - w / 2, cy - h / 2, w, h);
+        ctx.restore();
+      }
+
+      /* Logo */
+      if (logo.complete && logo.naturalWidth > 0) {
+        const logoMaxW = 380;
+        const logoScale = logoMaxW / logo.naturalWidth;
+        const logoW = logo.naturalWidth * logoScale;
+        const logoH = logo.naturalHeight * logoScale;
+        const logoX = 620;
+        const logoY = 160;
+        ctx.drawImage(logo, logoX, logoY, logoW, logoH);
+      }
+
+      /* Subtitulo */
+      ctx.font = '300 20px Poppins';
+      ctx.fillStyle = '#4A6670';
+      ctx.textAlign = 'left';
+      ctx.fillText('Obesidade  |  Cirurgia Bariátrica  |  Transtornos Alimentares', 625, 420);
+
+      /* Linha separadora */
+      ctx.strokeStyle = '#6FA5AA';
+      ctx.lineWidth = 2;
+      ctx.globalAlpha = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(625, 445);
+      ctx.lineTo(1050, 445);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+
+      /* CTA */
+      ctx.font = '400 18px Poppins';
+      ctx.fillStyle = '#6FA5AA';
+      ctx.fillText('Atendimento presencial e online', 625, 480);
+    }
+
+    function download() {
+      const link = document.createElement('a');
+      link.download = 'og-image.jpg';
+      link.href = canvas.toDataURL('image/jpeg', 0.95);
+      link.click();
+    }
+  </script>
+</body>
+</html>
