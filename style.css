@@ -425,17 +425,8 @@ body {
 }
 
 /* --- Animations --- */
-.animate-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.animate-item.visible,
-.no-js .animate-item {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Nota: .animate-item já é visível via inline style (segurança p/ WebViews).
+   A classe .visible é adicionada pelo JS para animação suave quando possível. */
 
 /* --- Responsive --- */
 @media (min-width: 768px) {

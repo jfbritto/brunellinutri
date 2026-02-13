@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="no-js">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Brunelli Sperandio Busteke | Nutricionista</title>
 
   <!-- SEO -->
@@ -34,16 +34,23 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
   <link rel="apple-touch-icon" href="assets/perfil-web.jpg">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts - carregamento assíncrono para não bloquear renderização -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Remove no-js flag imediatamente - prova que JS funciona -->
-  <script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script>
+  <!--
+    Estilo inline de segurança: se o CSS externo falhar ou o JS não rodar,
+    a página ainda fica visível com um layout mínimo aceitável.
+  -->
+  <style>
+    .animate-item { opacity: 1 !important; transform: none !important; }
+  </style>
 </head>
 <body>
   <div class="background-decoration">
