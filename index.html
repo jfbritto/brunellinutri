@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brunelli Sperandio Busteke | Nutricionista</title>
 
   <!-- SEO -->
@@ -11,7 +11,7 @@
   <meta name="author" content="Brunelli Sperandio Busteke">
   <meta name="theme-color" content="#6FA5AA">
 
-  <!-- Open Graph (Facebook, WhatsApp, Instagram, LinkedIn) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Brunelli Sperandio Busteke - Nutricionista">
@@ -21,63 +21,61 @@
   <meta property="og:image" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
   <meta property="og:image:secure_url" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:alt" content="Brunelli Sperandio Busteke - Nutricionista especializada em Obesidade, Cirurgia Bariátrica, Transtornos Alimentares e Doenças Crônicas">
+  <meta property="og:image:alt" content="Brunelli Sperandio Busteke - Nutricionista">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Brunelli Sperandio Busteke | Nutricionista">
   <meta name="twitter:description" content="Nutricionista especializada em Obesidade, Cirurgia Bariátrica, Transtornos Alimentares e Doenças Crônicas. Agende sua consulta!">
   <meta name="twitter:image" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
-  <meta name="twitter:image:alt" content="Brunelli Sperandio Busteke - Nutricionista">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
   <link rel="apple-touch-icon" href="assets/perfil-web.jpg">
 
-  <!-- Google Fonts - carregamento assíncrono para não bloquear renderização -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-
-  <!--
-    Estilo inline de segurança: se o CSS externo falhar ou o JS não rodar,
-    a página ainda fica visível com um layout mínimo aceitável.
-  -->
-  <style>
-    .animate-item { opacity: 1 !important; transform: none !important; }
-  </style>
 </head>
 <body>
-  <div class="background-decoration">
+
+  <div class="bg-decoration">
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
     <div class="circle circle-3"></div>
   </div>
 
   <main class="container">
-    <!-- Header -->
-    <header class="header animate-item">
+
+    <!-- Perfil -->
+    <div class="profile">
+      <img src="assets/perfil-web.jpg" alt="Brunelli Sperandio Busteke" class="profile-photo" width="120" height="120">
       <img src="assets/logo.png" alt="Brunelli Sperandio Busteke - Nutricionista" class="profile-logo">
-      <h1 class="sr-only">Brunelli Sperandio Busteke - Nutricionista</h1>
-    </header>
+      <p class="profile-subtitle">Nutricionista &bull; CRN 22102576</p>
+      <p class="profile-desc">Especializada em Obesidade, Cirurgia Bariátrica, Transtornos Alimentares e Doenças Crônicas</p>
+    </div>
 
-    <!-- Chat Interativo -->
-    <section class="chat animate-item" id="chat">
-      <div class="chat-messages" id="chat-messages"></div>
-      <div class="chat-options" id="chat-options"></div>
-    </section>
+    <!-- Links -->
+    <nav class="links">
+      <a href="https://api.whatsapp.com/send?phone=5527999986102&text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online." class="link-card">
+        <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="link-text">Agendar Consulta Online</span>
+      </a>
 
-    <!-- Footer -->
-    <footer class="footer animate-item">
+      <a href="https://api.whatsapp.com/send?phone=5527997799099&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial." class="link-card">
+        <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="link-text">Consulta Presencial &ndash; Vila Velha</span>
+      </a>
+
+    </nav>
+
+    <footer class="footer">
       <p>&copy; 2026 Brunelli Sperandio Busteke</p>
     </footer>
   </main>
 
-  <script src="script.js"></script>
 </body>
 </html>
