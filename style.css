@@ -47,7 +47,7 @@ body {
   );
   color: var(--color-text-primary);
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: var(--app-height, 100vh);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -120,7 +120,7 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: var(--app-height, 100vh);
 }
 
 /* --- Header --- */
@@ -169,7 +169,7 @@ body {
   padding: 24px 4px 8px;
   flex: 1;
   overflow-y: auto;
-  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .chat-messages > :first-child {
@@ -431,7 +431,8 @@ body {
   transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-.animate-item.visible {
+.animate-item.visible,
+.no-js .animate-item {
   opacity: 1;
   transform: translateY(0);
 }
