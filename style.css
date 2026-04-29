@@ -182,9 +182,9 @@ body {
 .profile-subtitle  { opacity: 0; animation: fade-up 0.5s ease 0.3s both; }
 .profile-desc      { opacity: 0; animation: fade-up 0.5s ease 0.4s both; }
 
-.link-card:nth-child(1) { opacity: 0; animation: fade-up 0.5s ease 0.55s both; }
-.link-card:nth-child(2) { opacity: 0; animation: fade-up 0.5s ease 0.7s both; }
-.link-card:nth-child(3) { opacity: 0; animation: fade-up 0.5s ease 0.85s both; }
+.link-card:nth-of-type(1) { opacity: 0; animation: fade-up 0.5s ease 0.55s both; }
+.link-card:nth-of-type(2) { opacity: 0; animation: fade-up 0.5s ease 0.7s both; }
+.link-card:nth-of-type(3) { opacity: 0; animation: fade-up 0.5s ease 0.85s both; }
 
 .footer { opacity: 0; animation: fade-up 0.4s ease 1s both; }
 
