@@ -186,7 +186,9 @@ body {
 .link-card:nth-of-type(2) { opacity: 0; animation: fade-up 0.5s ease 0.7s both; }
 .link-card:nth-of-type(3) { opacity: 0; animation: fade-up 0.5s ease 0.85s both; }
 
-.footer { opacity: 0; animation: fade-up 0.4s ease 1s both; }
+.links-podcast { opacity: 0; animation: fade-up 0.5s ease 1s both; }
+
+.footer { opacity: 0; animation: fade-up 0.4s ease 1.15s both; }
 
 /* --- Links --- */
 .links {
@@ -194,6 +196,20 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
+}
+
+.links-podcast {
+  margin-top: var(--spacing-sm);
+}
+
+.section-label {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 4px;
 }
 
 .link-card {
