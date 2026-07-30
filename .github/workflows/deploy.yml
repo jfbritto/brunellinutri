@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: deploy-brunellinutri
+      cancel-in-progress: false
+
+    steps:
+      # Sem job de teste: e HTML e CSS estaticos, e o smoke test do proprio
+      # deploy cobre o que haveria para verificar.
+      #
+      # Sem guarda de sessao: o deploy-static.sh nao faz artisan down, entao nao
+      # ha indisponibilidade a evitar — o nginx passa a servir os arquivos novos
+      # na requisicao seguinte ao reset.
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          # sudo porque o deploy-static.sh faz chown e chmod. O sudoers libera
+          # NOPASSWD apenas para este wrapper, que e root:root 755 e o usuario
+          # deploy nao pode editar.
+          script: sudo /home/deploy/deploy-brunellinutri.sh
