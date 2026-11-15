@@ -167,7 +167,7 @@ caso('Esc fecha e devolve o foco ao botão que abriu', async (page) => {
 });
 
 caso('origem fica guardada durante a visita', async (page, base) => {
-  await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+  await page.goto(base + '/', { waitUntil: 'load', timeout: 60000 });
   await abrirPor(page, '.topo-botoes [data-local="online"]');
   await page.click('#triagem-voltar').catch(() => {});
   assert.match(decodeURIComponent(await page.getAttribute('#triagem-pular', 'href')), /Vim pelo site \(Instagram\)/);
@@ -255,7 +255,9 @@ caso('sem JavaScript os links levam ao WhatsApp certo', async (page) => {
       await page.route('**/api.whatsapp.com/**', (r) => r.abort());
       await page.route('**/open.spotify.com/**', (r) => r.abort());
       try {
-        await page.goto(base + '/' + (opcoes.busca || ''), { waitUntil: 'networkidle' });
+        // 'load' + fontes prontas: determinístico (networkidle depende do Google Fonts e oscila)
+        await page.goto(base + '/' + (opcoes.busca || ''), { waitUntil: 'load', timeout: 60000 });
+        if (!opcoes.semJs) await page.evaluate(() => document.fonts.ready);
         await fn(page, base);
         assert.deepEqual(erros, [], 'erros de JavaScript na página');
         console.log('✔', nome);
