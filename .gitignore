@@ -1,4 +1,5 @@
 # Tudo que é versionado vai para produção: o deploy faz git reset --hard
 # numa cópia deste repositório servida pelo nginx. Notas internas ficam fora.
 CLAUDE.md
+interno/
 .DS_Store

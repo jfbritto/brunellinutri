@@ -9,7 +9,7 @@
   <meta name="description" content="Nutricionista clínica em Vila Velha e Vitória (ES) e online. Atende obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas. CRN 22102576.">
   <meta name="author" content="Brunelli Sperandio Busteke">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#6FA5AA">
+  <meta name="theme-color" content="#1E3B3E">
   <link rel="canonical" href="https://brunellinutri.com.br/">
   <link rel="me" href="https://www.instagram.com/brunellisb/">
 
@@ -18,36 +18,39 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Brunelli Sperandio Busteke, Nutricionista">
   <meta property="og:title" content="Brunelli Sperandio Busteke | Nutricionista em Vila Velha e Vitória">
-  <meta property="og:description" content="Nutricionista clínica em Vila Velha, Vitória (ES) e online. Obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas. Agende pelo WhatsApp.">
+  <meta property="og:description" content="Nutricionista clínica online para todo o Brasil e presencial em Vila Velha e Vitória (ES). Obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas.">
   <meta property="og:url" content="https://brunellinutri.com.br/">
-  <meta property="og:image" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
-  <meta property="og:image:secure_url" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
+  <meta property="og:image" content="https://brunellinutri.com.br/assets/og-brunelli.jpg">
+  <meta property="og:image:secure_url" content="https://brunellinutri.com.br/assets/og-brunelli.jpg">
   <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="600">
-  <meta property="og:image:height" content="600">
-  <meta property="og:image:alt" content="Brunelli Sperandio Busteke, nutricionista">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Brunelli Sperandio Busteke, nutricionista, sorrindo">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Brunelli Sperandio Busteke | Nutricionista em Vila Velha e Vitória">
-  <meta name="twitter:description" content="Nutricionista clínica em Vila Velha, Vitória (ES) e online. Obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas.">
-  <meta name="twitter:image" content="https://brunellinutri.com.br/assets/perfil-web.jpg">
+  <meta name="twitter:description" content="Nutricionista clínica online para todo o Brasil e presencial em Vila Velha e Vitória (ES).">
+  <meta name="twitter:image" content="https://brunellinutri.com.br/assets/og-brunelli.jpg">
 
-  <!-- Favicon -->
+  <!-- Ícones -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
-  <link rel="apple-touch-icon" href="assets/perfil-web.jpg">
+  <link rel="apple-touch-icon" href="assets/icone-180.jpg">
 
-  <!-- Google Fonts -->
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Preload critical images -->
-  <link rel="preload" as="image" href="assets/perfil-web.jpg" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/logo.png">
+  <!-- Foto do topo carrega primeiro -->
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        href="assets/fotos/brunelli-consulta-online-800.webp"
+        imagesrcset="assets/fotos/brunelli-consulta-online-480.webp 480w, assets/fotos/brunelli-consulta-online-800.webp 800w, assets/fotos/brunelli-consulta-online-1200.webp 1200w"
+        imagesizes="(min-width: 900px) 460px, 100vw">
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <script src="logica.js" defer></script>
+  <script src="app.js" defer></script>
 
   <!-- Dados estruturados: mantenha igual ao texto visível e ao Perfil da Empresa no Google -->
   <script type="application/ld+json">
@@ -71,6 +74,7 @@
         "isPartOf": { "@id": "https://brunellinutri.com.br/#site" },
         "about": { "@id": "https://brunellinutri.com.br/#brunelli" },
         "mainEntity": { "@id": "https://brunellinutri.com.br/#brunelli" },
+        "primaryImageOfPage": "https://brunellinutri.com.br/assets/og-brunelli.jpg",
         "dateModified": "2026-11-15"
       },
       {
@@ -78,9 +82,9 @@
         "@id": "https://brunellinutri.com.br/#brunelli",
         "name": "Brunelli Sperandio Busteke",
         "jobTitle": "Nutricionista clínica",
-        "description": "Nutricionista clínica com atendimento online e presencial em Vila Velha e Vitória (ES), em obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas.",
+        "description": "Nutricionista clínica com atendimento online para todo o Brasil e presencial em Vila Velha e Vitória (ES), em obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas.",
         "url": "https://brunellinutri.com.br/",
-        "image": "https://brunellinutri.com.br/assets/perfil-web.jpg",
+        "image": "https://brunellinutri.com.br/assets/fotos/brunelli-nutricionista-800.jpg",
         "hasCredential": {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "Registro profissional",
@@ -102,27 +106,15 @@
           {
             "@type": "MedicalClinic",
             "name": "Clínica da Dra. Queulla Garret",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Vila Velha",
-              "addressRegion": "ES",
-              "addressCountry": "BR"
-            }
+            "address": { "@type": "PostalAddress", "addressLocality": "Vila Velha", "addressRegion": "ES", "addressCountry": "BR" }
           },
           {
             "@type": "MedicalClinic",
             "name": "Clínica Densia",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Vitória",
-              "addressRegion": "ES",
-              "addressCountry": "BR"
-            }
+            "address": { "@type": "PostalAddress", "addressLocality": "Vitória", "addressRegion": "ES", "addressCountry": "BR" }
           }
         ],
-        "sameAs": [
-          "https://www.instagram.com/brunellisb/"
-        ]
+        "sameAs": ["https://www.instagram.com/brunellisb/"]
       },
       {
         "@type": "PodcastSeries",
@@ -140,17 +132,27 @@
           {
             "@type": "Question",
             "name": "Como faço para agendar uma consulta com a Brunelli?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Pelo WhatsApp, nos botões do topo do site: um para consulta online, outro para consulta presencial em Vila Velha e outro para consulta presencial em Vitória." }
-          },
-          {
-            "@type": "Question",
-            "name": "Onde são os atendimentos presenciais?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Em Vila Velha, na clínica da Dra. Queulla Garret, e em Vitória, na Clínica Densia, no Espírito Santo. O endereço e os horários são informados no agendamento." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Pelo WhatsApp. Toque em um dos botões de agendamento do site, escolha consulta online, presencial em Vila Velha ou presencial em Vitória, e a mensagem já sai pronta." }
           },
           {
             "@type": "Question",
             "name": "Como funciona a consulta online?",
-            "acceptedAnswer": { "@type": "Answer", "text": "É feita por videochamada, com o mesmo cuidado da consulta presencial. É uma boa opção para quem mora longe ou prefere ser atendido de casa." }
+            "acceptedAnswer": { "@type": "Answer", "text": "É feita por videochamada, com o mesmo cuidado da consulta presencial, para pessoas de qualquer lugar do Brasil." }
+          },
+          {
+            "@type": "Question",
+            "name": "Onde são os atendimentos presenciais?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Em Vila Velha, na clínica da Dra. Queulla Garret, e em Vitória, na Clínica Densia, no Espírito Santo. O endereço e os horários são enviados no agendamento." }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto custa a consulta?",
+            "acceptedAnswer": { "@type": "Answer", "text": "O valor é enviado pelo WhatsApp, junto com os horários disponíveis." }
+          },
+          {
+            "@type": "Question",
+            "name": "Atende convênio?",
+            "acceptedAnswer": { "@type": "Answer", "text": "O atendimento é particular." }
           },
           {
             "@type": "Question",
@@ -170,154 +172,468 @@
 </head>
 <body>
 
-  <div class="bg-decoration">
-    <div class="circle circle-1"></div>
-    <div class="circle circle-2"></div>
-    <div class="circle circle-3"></div>
-  </div>
+  <!-- Ícones reutilizados -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></g></symbol>
+  </svg>
 
-  <main class="container">
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- Perfil -->
-    <header class="profile">
-      <img src="assets/perfil-web.jpg" alt="Foto de Brunelli Sperandio Busteke" class="profile-photo" width="120" height="120" loading="eager" fetchpriority="high">
-      <h1 class="profile-title">
-        <img src="assets/logo.png" alt="Brunelli Sperandio Busteke" class="profile-logo" width="200" height="83">
-        <span class="profile-role">Nutricionista clínica em Vila Velha, Vitória e online</span>
-      </h1>
-      <p class="profile-subtitle">CRN 22102576</p>
-      <p class="profile-desc">Especializada em Obesidade, Cirurgia Bariátrica, Transtornos Alimentares e Doenças Crônicas</p>
-    </header>
-
-    <!-- Agendamento -->
-    <nav class="links" aria-label="Opções de agendamento">
-      <h2 class="visually-hidden">Agende sua consulta</h2>
-      <a href="https://api.whatsapp.com/send?phone=5527999986102&text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online." class="link-card">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span class="link-text">Agendar Consulta Online</span>
+  <header class="cabecalho" id="cabecalho">
+    <div class="cabecalho-interno">
+      <a class="cabecalho-marca" href="#topo">
+        <img src="assets/logo.png" alt="Brunelli Sperandio Busteke, nutricionista" class="logo" width="132" height="55">
       </a>
+      <nav class="cabecalho-nav" aria-label="Seções do site">
+        <a href="#sobre">Sobre</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#areas">Áreas</a>
+        <a href="#onde-atende">Onde atende</a>
+        <a href="#podcast">Podcast</a>
+        <a href="#duvidas">Dúvidas</a>
+      </nav>
+      <a class="botao botao-pequeno botao-claro cabecalho-agendar" data-triagem
+         href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Agendar</a>
+    </div>
+  </header>
 
-      <a href="https://api.whatsapp.com/send?phone=5527997799099&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial." class="link-card">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="link-text">Consulta Presencial em Vila Velha</span>
-      </a>
+  <main id="conteudo">
 
-      <a href="https://api.whatsapp.com/send?phone=5527995270307&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial." class="link-card">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span class="link-text">Consulta Presencial em Vit&oacute;ria</span>
-      </a>
-    </nav>
+    <!-- Topo -->
+    <section class="topo" id="topo" aria-labelledby="titulo-principal">
+      <picture class="topo-foto">
+        <source type="image/webp" sizes="(min-width: 900px) 460px, 100vw"
+                srcset="assets/fotos/brunelli-consulta-online-480.webp 480w, assets/fotos/brunelli-consulta-online-800.webp 800w, assets/fotos/brunelli-consulta-online-1200.webp 1200w">
+        <img src="assets/fotos/brunelli-consulta-online-800.jpg" sizes="(min-width: 900px) 460px, 100vw"
+             srcset="assets/fotos/brunelli-consulta-online-480.jpg 480w, assets/fotos/brunelli-consulta-online-800.jpg 800w, assets/fotos/brunelli-consulta-online-1200.jpg 1200w"
+             alt="Brunelli Sperandio Busteke sorrindo diante do notebook, pronta para uma consulta online"
+             width="800" height="1066" fetchpriority="high">
+      </picture>
 
-    <!-- Instagram e podcast -->
-    <nav class="links links-podcast" aria-label="Instagram e podcast">
-      <h2 class="section-label">Conteúdos</h2>
-      <p class="section-hint">Instagram e o podcast da Dra. Queulla Garret, que ela apresenta</p>
+      <div class="topo-texto">
+        <h1 class="topo-titulo" id="titulo-principal">
+          <span class="sobretitulo">Brunelli Sperandio Busteke · Nutricionista clínica</span>
+          Nutrição clínica com <em>acolhimento e ciência</em>
+        </h1>
+        <p class="topo-apoio">Consulta online para todo o Brasil e presencial em Vila Velha e Vitória (ES). Obesidade, cirurgia bariátrica, transtornos alimentares e doenças crônicas.</p>
 
-      <a href="https://www.instagram.com/brunellisb/" class="link-card" target="_blank" rel="noopener me">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-        <span class="link-text">Seguir @brunellisb no Instagram</span>
-      </a>
+        <p class="rotulo" id="rotulo-consulta">Como prefere a sua consulta?</p>
+        <div class="topo-botoes" role="group" aria-labelledby="rotulo-consulta">
+          <a class="botao botao-claro" data-triagem data-local="online"
+             href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">
+            <svg class="icone" aria-hidden="true"><use href="#i-video"/></svg>Consulta online
+          </a>
+          <a class="botao botao-contorno" data-triagem data-local="vila-velha"
+             href="https://api.whatsapp.com/send?phone=5527997799099&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">
+            Presencial em Vila Velha
+          </a>
+          <a class="botao botao-contorno" data-triagem data-local="vitoria"
+             href="https://api.whatsapp.com/send?phone=5527995270307&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">
+            Presencial em Vitória
+          </a>
+        </div>
 
-      <a href="https://open.spotify.com/show/033SN7ucA2Patif4AUXLyZ?si=1d4d10f7f2434f87" class="link-card" target="_blank" rel="noopener">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        <span class="link-text">Ouvir o podcast no Spotify</span>
-      </a>
-
-      <a href="https://www.youtube.com/@DraQueullaGarret" class="link-card" target="_blank" rel="noopener">
-        <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        <span class="link-text">Assistir o podcast no YouTube</span>
-      </a>
-    </nav>
-
-    <!-- Conteúdo: o que Google e assistentes de IA leem para entender quem ela é -->
-    <div class="content">
-
-      <section class="section" aria-labelledby="sobre-titulo">
-        <h2 id="sobre-titulo" class="section-title">Sobre a Brunelli</h2>
-        <p>Brunelli Sperandio Busteke é nutricionista clínica, CRN 22102576, com pós-graduação nas áreas em que atende. Cuida da alimentação de pessoas com obesidade, de quem vai fazer ou já fez cirurgia bariátrica, de quem convive com transtornos alimentares e de quem tem doenças crônicas.</p>
-        <p>Atende online e presencialmente em Vila Velha e em Vitória, no Espírito Santo. Também apresenta o podcast da Dra. Queulla Garret, sobre saúde, endocrinologia e nutrição.</p>
-      </section>
-
-      <section class="section" aria-labelledby="areas-titulo">
-        <h2 id="areas-titulo" class="section-title">Áreas de atendimento</h2>
-        <ul class="cards">
-          <li>
-            <h3>Obesidade</h3>
-            <p>Tratamento nutricional com plano alimentar individualizado e acompanhamento contínuo.</p>
-          </li>
-          <li>
-            <h3>Cirurgia bariátrica</h3>
-            <p>Preparo da alimentação para a cirurgia e acompanhamento em cada fase do pós-operatório.</p>
-          </li>
-          <li>
-            <h3>Transtornos alimentares</h3>
-            <p>Acompanhamento nutricional em compulsão alimentar e outros transtornos do comportamento alimentar.</p>
-          </li>
-          <li>
-            <h3>Doenças crônicas</h3>
-            <p>Alimentação planejada para diabetes, hipertensão, colesterol alto, gordura no fígado e outras condições.</p>
-          </li>
+        <ul class="selos">
+          <li>CRN 22102576</li>
+          <li>Pós-graduação nas áreas que atende</li>
+          <li>Online para todo o Brasil</li>
+          <li>Atendimento particular</li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <section class="section" aria-labelledby="locais-titulo">
-        <h2 id="locais-titulo" class="section-title">Onde ela atende</h2>
-        <ul class="cards">
-          <li>
-            <h3>Online</h3>
-            <p>Consulta por videochamada, para quem mora longe ou prefere ser atendido de casa.</p>
-            <a class="card-link" href="https://api.whatsapp.com/send?phone=5527999986102&text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Agendar consulta online</a>
-          </li>
-          <li>
-            <h3>Vila Velha (ES)</h3>
-            <p>Na clínica da Dra. Queulla Garret.</p>
-            <a class="card-link" href="https://api.whatsapp.com/send?phone=5527997799099&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">Agendar em Vila Velha</a>
-          </li>
-          <li>
-            <h3>Vitória (ES)</h3>
-            <p>Na Clínica Densia.</p>
-            <a class="card-link" href="https://api.whatsapp.com/send?phone=5527995270307&text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">Agendar em Vitória</a>
-          </li>
-        </ul>
-        <p class="section-note">O endereço e os horários são informados no agendamento.</p>
-      </section>
-
-      <section class="section faq" aria-labelledby="faq-titulo">
-        <h2 id="faq-titulo" class="section-title">Perguntas frequentes</h2>
-
-        <details>
-          <summary>Como faço para agendar uma consulta com a Brunelli?</summary>
-          <p>Pelo WhatsApp, nos botões do topo do site: um para consulta online, outro para consulta presencial em Vila Velha e outro para consulta presencial em Vitória.</p>
-        </details>
-
-        <details>
-          <summary>Onde são os atendimentos presenciais?</summary>
-          <p>Em Vila Velha, na clínica da Dra. Queulla Garret, e em Vitória, na Clínica Densia, no Espírito Santo. O endereço e os horários são informados no agendamento.</p>
-        </details>
-
-        <details>
-          <summary>Como funciona a consulta online?</summary>
-          <p>É feita por videochamada, com o mesmo cuidado da consulta presencial. É uma boa opção para quem mora longe ou prefere ser atendido de casa.</p>
-        </details>
-
-        <details>
-          <summary>A Brunelli atende quem vai fazer ou já fez cirurgia bariátrica?</summary>
-          <p>Sim. Ela acompanha a alimentação no preparo para a cirurgia e em cada fase do pós-operatório.</p>
-        </details>
-
-        <details>
-          <summary>Ela atende transtornos alimentares, como compulsão alimentar?</summary>
-          <p>Sim. Transtornos alimentares são uma das áreas de atendimento dela. O cuidado costuma envolver também médico e psicólogo.</p>
-        </details>
-      </section>
-
+    <!-- Faixa decorativa -->
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa-trilho">
+        <div class="faixa-grupo"><span>Acolhimento</span><span>✦</span><span>Ciência</span><span>✦</span><span>Plano individual</span><span>✦</span><span>Sem dieta da moda</span><span>✦</span><span>Online e presencial</span><span>✦</span></div>
+        <div class="faixa-grupo"><span>Acolhimento</span><span>✦</span><span>Ciência</span><span>✦</span><span>Plano individual</span><span>✦</span><span>Sem dieta da moda</span><span>✦</span><span>Online e presencial</span><span>✦</span></div>
+      </div>
     </div>
 
-    <footer class="footer">
-      <p>Brunelli Sperandio Busteke · Nutricionista · CRN 22102576</p>
-      <p>&copy; 2026</p>
-    </footer>
+    <!-- Sobre -->
+    <section class="secao secao-creme" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="secao-interna sobre">
+        <figure class="arco revelar">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 400px, 80vw"
+                    srcset="assets/fotos/brunelli-nutricionista-480.webp 480w, assets/fotos/brunelli-nutricionista-800.webp 800w, assets/fotos/brunelli-nutricionista-1200.webp 1200w">
+            <img src="assets/fotos/brunelli-nutricionista-800.jpg" sizes="(min-width: 900px) 400px, 80vw"
+                 srcset="assets/fotos/brunelli-nutricionista-480.jpg 480w, assets/fotos/brunelli-nutricionista-800.jpg 800w, assets/fotos/brunelli-nutricionista-1200.jpg 1200w"
+                 alt="Retrato de Brunelli Sperandio Busteke, nutricionista" width="800" height="1066" loading="lazy">
+          </picture>
+        </figure>
+        <div class="sobre-texto revelar">
+          <p class="sobretitulo">Prazer, sou a Brunelli</p>
+          <h2 class="titulo-secao" id="sobre-titulo">Cuidado nutricional que respeita <em>a sua história</em></h2>
+          <p>Sou nutricionista clínica e acompanho pessoas com obesidade, quem vai fazer ou já fez cirurgia bariátrica, quem convive com transtornos alimentares e quem tem doenças crônicas.</p>
+          <p>O plano parte da sua rotina, dos seus exames e da sua relação com a comida, para ser possível de seguir e sem julgamento. Atendo online, para todo o Brasil, e presencialmente em Vila Velha e em Vitória.</p>
+          <ul class="credenciais">
+            <li><strong>CRN 22102576</strong>Registro no Conselho Regional de Nutricionistas</li>
+            <li><strong>Pós-graduação</strong>Nas áreas em que atende</li>
+            <li><strong>Podcast</strong>Apresentadora do podcast da Dra. Queulla Garret</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="secao secao-areia" id="como-funciona" aria-labelledby="como-titulo">
+      <div class="secao-interna como">
+        <div class="como-cabeca revelar">
+          <p class="sobretitulo">Como funciona</p>
+          <h2 class="titulo-secao" id="como-titulo">Do primeiro contato <em>ao seu plano</em></h2>
+        </div>
+        <ol class="passos">
+          <li class="passo revelar">
+            <span class="passo-numero" aria-hidden="true">1</span>
+            <h3>Você manda uma mensagem</h3>
+            <p>Pelo WhatsApp, conta o que busca e recebe os horários disponíveis e o valor da consulta.</p>
+          </li>
+          <li class="passo revelar">
+            <span class="passo-numero" aria-hidden="true">2</span>
+            <h3>Primeira consulta</h3>
+            <p>Online ou presencial, a Brunelli conhece sua história, rotina, exames e objetivos.</p>
+          </li>
+          <li class="passo revelar">
+            <span class="passo-numero" aria-hidden="true">3</span>
+            <h3>Plano individual</h3>
+            <p>Você recebe um plano alimentar pensado para a sua vida real.</p>
+          </li>
+          <li class="passo revelar">
+            <span class="passo-numero" aria-hidden="true">4</span>
+            <h3>Retornos</h3>
+            <p>Os retornos acompanham sua evolução e ajustam o plano sempre que precisar.</p>
+          </li>
+        </ol>
+        <figure class="como-foto revelar">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 420px, 90vw"
+                    srcset="assets/fotos/brunelli-plano-alimentar-480.webp 480w, assets/fotos/brunelli-plano-alimentar-800.webp 800w, assets/fotos/brunelli-plano-alimentar-1200.webp 1200w">
+            <img src="assets/fotos/brunelli-plano-alimentar-800.jpg" sizes="(min-width: 900px) 420px, 90vw"
+                 srcset="assets/fotos/brunelli-plano-alimentar-480.jpg 480w, assets/fotos/brunelli-plano-alimentar-800.jpg 800w, assets/fotos/brunelli-plano-alimentar-1200.jpg 1200w"
+                 alt="Brunelli segurando um tablet, sorrindo" width="800" height="1066" loading="lazy">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Áreas: portas por necessidade -->
+    <section class="secao secao-creme" id="areas" aria-labelledby="areas-titulo">
+      <div class="secao-interna">
+        <div class="cabeca-centro revelar">
+          <p class="sobretitulo">Áreas de atendimento</p>
+          <h2 class="titulo-secao" id="areas-titulo">O que traz você <em>até aqui?</em></h2>
+          <p>Toque na frase que mais combina com o seu momento.</p>
+        </div>
+
+        <div class="portas">
+          <details class="porta revelar">
+            <summary>
+              <span class="porta-area">Cirurgia bariátrica</span>
+              <span class="porta-frase">Vou operar, ou já operei, e quero fazer isso do jeito certo.</span>
+              <span class="porta-icone" aria-hidden="true"></span>
+            </summary>
+            <div class="porta-corpo">
+              <p>Preparo nutricional antes da cirurgia e acompanhamento em cada fase depois dela, para comer bem e com segurança em cada etapa.</p>
+              <ol class="linha-tempo" aria-label="Fases da alimentação na cirurgia bariátrica">
+                <li>Pré-operatório</li>
+                <li>Líquida</li>
+                <li>Pastosa</li>
+                <li>Branda</li>
+                <li>Alimentação sólida</li>
+                <li>Acompanhamento contínuo</li>
+              </ol>
+              <div class="porta-acoes">
+                <a class="botao botao-escuro" data-triagem data-motivo="bariatrica-pre"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Vou operar</a>
+                <a class="botao botao-contorno-escuro" data-triagem data-motivo="bariatrica-pos"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Já operei</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="porta revelar">
+            <summary>
+              <span class="porta-area">Obesidade</span>
+              <span class="porta-frase">Já tentei muitas dietas e quero um acompanhamento contínuo.</span>
+              <span class="porta-icone" aria-hidden="true"></span>
+            </summary>
+            <div class="porta-corpo">
+              <p>Tratamento nutricional da obesidade com plano individual, que considera rotina, exames, histórico e preferências, e acompanhamento ao longo do tempo.</p>
+              <div class="porta-acoes">
+                <a class="botao botao-escuro" data-triagem data-motivo="obesidade"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Quero falar sobre isso</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="porta revelar">
+            <summary>
+              <span class="porta-area">Transtornos alimentares</span>
+              <span class="porta-frase">Sinto que perco o controle com a comida.</span>
+              <span class="porta-icone" aria-hidden="true"></span>
+            </summary>
+            <div class="porta-corpo">
+              <p>Acompanhamento nutricional em compulsão alimentar e outros transtornos do comportamento alimentar, com acolhimento, sem julgamento e em conjunto com a equipe de saúde quando necessário.</p>
+              <div class="porta-acoes">
+                <a class="botao botao-escuro" data-triagem data-motivo="compulsao"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Quero falar sobre isso</a>
+              </div>
+            </div>
+          </details>
+
+          <details class="porta revelar">
+            <summary>
+              <span class="porta-area">Doenças crônicas</span>
+              <span class="porta-frase">Recebi um diagnóstico e preciso ajustar minha alimentação.</span>
+              <span class="porta-icone" aria-hidden="true"></span>
+            </summary>
+            <div class="porta-corpo">
+              <p>Alimentação planejada para diabetes, hipertensão, colesterol alto, gordura no fígado e outras condições, junto com o acompanhamento médico.</p>
+              <div class="porta-acoes">
+                <a class="botao botao-escuro" data-triagem data-motivo="cronicas"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">Quero falar sobre isso</a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onde atende -->
+    <section class="secao secao-areia" id="onde-atende" aria-labelledby="onde-titulo">
+      <div class="secao-interna">
+        <div class="cabeca-centro revelar">
+          <p class="sobretitulo">Onde ela atende</p>
+          <h2 class="titulo-secao" id="onde-titulo">Online ou <em>presencial</em></h2>
+        </div>
+
+        <div class="abas revelar" data-abas>
+          <div class="abas-lista" role="tablist" aria-label="Locais de atendimento">
+            <button type="button" role="tab" id="aba-online" aria-controls="painel-online" aria-selected="true">Online</button>
+            <button type="button" role="tab" id="aba-vila-velha" aria-controls="painel-vila-velha" aria-selected="false" tabindex="-1">Vila Velha</button>
+            <button type="button" role="tab" id="aba-vitoria" aria-controls="painel-vitoria" aria-selected="false" tabindex="-1">Vitória</button>
+          </div>
+
+          <div class="abas-paineis">
+            <div class="painel painel-com-foto" role="tabpanel" id="painel-online" aria-labelledby="aba-online">
+              <picture>
+                <source type="image/webp" sizes="(min-width: 900px) 460px, 90vw"
+                        srcset="assets/fotos/brunelli-atendimento-online-480.webp 480w, assets/fotos/brunelli-atendimento-online-800.webp 800w, assets/fotos/brunelli-atendimento-online-1200.webp 1200w">
+                <img src="assets/fotos/brunelli-atendimento-online-800.jpg" sizes="(min-width: 900px) 460px, 90vw"
+                     srcset="assets/fotos/brunelli-atendimento-online-480.jpg 480w, assets/fotos/brunelli-atendimento-online-800.jpg 800w, assets/fotos/brunelli-atendimento-online-1200.jpg 1200w"
+                     alt="Brunelli em frente ao notebook, em atendimento online" width="800" height="1066" loading="lazy">
+              </picture>
+              <div class="painel-texto">
+                <h3>Consulta online</h3>
+                <p>Por videochamada, de qualquer lugar do Brasil, com o mesmo cuidado da consulta presencial.</p>
+                <a class="botao botao-escuro" data-triagem data-local="online"
+                   href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">
+                  <svg class="icone" aria-hidden="true"><use href="#i-video"/></svg>Agendar consulta online
+                </a>
+              </div>
+            </div>
+
+            <div class="painel" role="tabpanel" id="painel-vila-velha" aria-labelledby="aba-vila-velha">
+              <div class="painel-texto">
+                <h3>Vila Velha (ES)</h3>
+                <p>Na clínica da Dra. Queulla Garret.</p>
+                <p class="nota">Endereço e horários enviados no agendamento.</p>
+                <a class="botao botao-escuro" data-triagem data-local="vila-velha"
+                   href="https://api.whatsapp.com/send?phone=5527997799099&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">
+                  <svg class="icone" aria-hidden="true"><use href="#i-pin"/></svg>Agendar em Vila Velha
+                </a>
+              </div>
+            </div>
+
+            <div class="painel" role="tabpanel" id="painel-vitoria" aria-labelledby="aba-vitoria">
+              <div class="painel-texto">
+                <h3>Vitória (ES)</h3>
+                <p>Na Clínica Densia.</p>
+                <p class="nota">Endereço e horários enviados no agendamento.</p>
+                <a class="botao botao-escuro" data-triagem data-local="vitoria"
+                   href="https://api.whatsapp.com/send?phone=5527995270307&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20nutricionista%20Brunelli%20e%20gostaria%20de%20agendar%20uma%20consulta%20presencial.">
+                  <svg class="icone" aria-hidden="true"><use href="#i-pin"/></svg>Agendar em Vitória
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Podcast -->
+    <section class="secao secao-profunda" id="podcast" aria-labelledby="podcast-titulo">
+      <div class="secao-interna podcast">
+        <figure class="arco arco-pequeno revelar">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 320px, 60vw"
+                    srcset="assets/fotos/brunelli-podcast-480.webp 480w, assets/fotos/brunelli-podcast-800.webp 800w">
+            <img src="assets/fotos/brunelli-podcast-480.jpg" sizes="(min-width: 900px) 320px, 60vw"
+                 srcset="assets/fotos/brunelli-podcast-480.jpg 480w, assets/fotos/brunelli-podcast-800.jpg 800w"
+                 alt="Brunelli sorrindo, olhando para o lado" width="480" height="640" loading="lazy">
+          </picture>
+        </figure>
+        <div class="podcast-texto revelar">
+          <p class="sobretitulo">No podcast</p>
+          <h2 class="titulo-secao" id="podcast-titulo">Conversas sobre saúde, <em>endocrinologia e nutrição</em></h2>
+          <p>A Brunelli apresenta o podcast da Dra. Queulla Garret, com informação baseada em evidências e linguagem clara.</p>
+          <div class="podcast-player">
+            <button type="button" class="podcast-play" data-embed="https://open.spotify.com/embed/show/033SN7ucA2Patif4AUXLyZ?theme=0">
+              <svg class="icone icone-grande" aria-hidden="true"><use href="#i-play"/></svg>
+              <span>Ouvir o podcast aqui no site</span>
+            </button>
+          </div>
+          <p class="podcast-links">
+            <a href="https://open.spotify.com/show/033SN7ucA2Patif4AUXLyZ" target="_blank" rel="noopener">Abrir no Spotify</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://www.youtube.com/@DraQueullaGarret" target="_blank" rel="noopener">Assistir no YouTube</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Perguntas frequentes -->
+    <section class="secao secao-creme" id="duvidas" aria-labelledby="duvidas-titulo">
+      <div class="secao-interna">
+        <div class="cabeca-centro revelar">
+          <p class="sobretitulo">Dúvidas</p>
+          <h2 class="titulo-secao" id="duvidas-titulo">Perguntas <em>frequentes</em></h2>
+        </div>
+        <div class="faq revelar">
+          <details>
+            <summary>Como faço para agendar uma consulta com a Brunelli?</summary>
+            <p>Pelo WhatsApp. Toque em um dos botões de agendamento do site, escolha consulta online, presencial em Vila Velha ou presencial em Vitória, e a mensagem já sai pronta.</p>
+          </details>
+          <details>
+            <summary>Como funciona a consulta online?</summary>
+            <p>É feita por videochamada, com o mesmo cuidado da consulta presencial, para pessoas de qualquer lugar do Brasil.</p>
+          </details>
+          <details>
+            <summary>Onde são os atendimentos presenciais?</summary>
+            <p>Em Vila Velha, na clínica da Dra. Queulla Garret, e em Vitória, na Clínica Densia, no Espírito Santo. O endereço e os horários são enviados no agendamento.</p>
+          </details>
+          <details>
+            <summary>Quanto custa a consulta?</summary>
+            <p>O valor é enviado pelo WhatsApp, junto com os horários disponíveis.</p>
+          </details>
+          <details>
+            <summary>Atende convênio?</summary>
+            <p>O atendimento é particular.</p>
+          </details>
+          <details>
+            <summary>A Brunelli atende quem vai fazer ou já fez cirurgia bariátrica?</summary>
+            <p>Sim. Ela acompanha a alimentação no preparo para a cirurgia e em cada fase do pós-operatório.</p>
+          </details>
+          <details>
+            <summary>Ela atende transtornos alimentares, como compulsão alimentar?</summary>
+            <p>Sim. Transtornos alimentares são uma das áreas de atendimento dela. O cuidado costuma envolver também médico e psicólogo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada final -->
+    <section class="secao secao-profunda chamada" id="agendar" aria-labelledby="chamada-titulo">
+      <div class="secao-interna chamada-interna">
+        <figure class="arco revelar">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 380px, 70vw"
+                    srcset="assets/fotos/brunelli-conversa-480.webp 480w, assets/fotos/brunelli-conversa-800.webp 800w">
+            <img src="assets/fotos/brunelli-conversa-480.jpg" sizes="(min-width: 900px) 380px, 70vw"
+                 srcset="assets/fotos/brunelli-conversa-480.jpg 480w, assets/fotos/brunelli-conversa-800.jpg 800w"
+                 alt="Brunelli sentada no sofá, sorrindo" width="480" height="640" loading="lazy">
+          </picture>
+        </figure>
+        <div class="chamada-texto revelar">
+          <h2 class="titulo-secao" id="chamada-titulo">Vamos <em>conversar?</em></h2>
+          <p>Conte o que você busca e receba os horários disponíveis.</p>
+          <a class="botao botao-claro" data-triagem
+             href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">
+            <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Agendar pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="rodape">
+    <div class="rodape-interno">
+      <img src="assets/logo.png" alt="Brunelli Sperandio Busteke, nutricionista" class="logo" width="150" height="63" loading="lazy">
+      <p>Brunelli Sperandio Busteke · Nutricionista clínica · CRN 22102576</p>
+      <p>Atendimento particular · Online para todo o Brasil · Vila Velha e Vitória (ES)</p>
+      <p><a href="https://www.instagram.com/brunellisb/" target="_blank" rel="noopener me">Instagram @brunellisb</a></p>
+      <p class="rodape-copy">&copy; 2026</p>
+    </div>
+  </footer>
+
+  <!-- Barra fixa no celular (ativada pelo app.js) -->
+  <nav class="barra-fixa" aria-label="Atalhos">
+    <a class="barra-agendar" data-triagem
+       href="https://api.whatsapp.com/send?phone=5527999986102&amp;text=Ol%C3%A1%20Brunelli!%20Vim%20pelo%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20online.">
+      <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Agendar
+    </a>
+    <a href="#onde-atende"><svg class="icone" aria-hidden="true"><use href="#i-pin"/></svg>Onde atendo</a>
+    <a href="#podcast"><svg class="icone" aria-hidden="true"><use href="#i-play"/></svg>Podcast</a>
+  </nav>
+
+  <!-- Triagem: monta a mensagem do WhatsApp (app.js) -->
+  <dialog id="triagem" class="triagem" aria-labelledby="triagem-titulo">
+    <div class="triagem-caixa">
+      <div class="triagem-topo">
+        <button type="button" id="triagem-voltar" class="triagem-botao">‹ Voltar</button>
+        <p id="triagem-titulo" class="triagem-marca">Agendar consulta</p>
+        <button type="button" id="triagem-fechar" class="triagem-botao triagem-fechar" aria-label="Fechar">×</button>
+      </div>
+      <div class="triagem-progresso" aria-hidden="true"><span data-etapa="local"></span><span data-etapa="motivo"></span><span data-etapa="periodo"></span></div>
+      <p id="triagem-escolhas" class="triagem-escolhas" hidden></p>
+
+      <section data-passo="local" hidden>
+        <h2 class="triagem-titulo-passo" tabindex="-1">Como prefere a sua consulta?</h2>
+        <div class="opcoes">
+          <button type="button" class="opcao" data-escolha="local" data-valor="online"><strong>Consulta online</strong><span>Por videochamada, de qualquer lugar do Brasil</span></button>
+          <button type="button" class="opcao" data-escolha="local" data-valor="vila-velha"><strong>Presencial em Vila Velha</strong><span>Na clínica da Dra. Queulla Garret</span></button>
+          <button type="button" class="opcao" data-escolha="local" data-valor="vitoria"><strong>Presencial em Vitória</strong><span>Na Clínica Densia</span></button>
+        </div>
+      </section>
+
+      <section data-passo="motivo" hidden>
+        <h2 class="triagem-titulo-passo" tabindex="-1">Qual o principal motivo da consulta?</h2>
+        <div class="opcoes opcoes-chips">
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="bariatrica-pre">Pré-operatório de bariátrica</button>
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="bariatrica-pos">Pós-operatório de bariátrica</button>
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="obesidade">Obesidade e emagrecimento</button>
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="compulsao">Relação com a comida e compulsão</button>
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="cronicas">Diabetes, pressão, colesterol ou outra doença crônica</button>
+          <button type="button" class="opcao" data-escolha="motivo" data-valor="outro">Outro motivo</button>
+        </div>
+      </section>
+
+      <section data-passo="periodo" hidden>
+        <h2 class="triagem-titulo-passo" tabindex="-1">Qual período fica melhor para você?</h2>
+        <div class="opcoes opcoes-chips">
+          <button type="button" class="opcao" data-escolha="periodo" data-valor="manha">Manhã</button>
+          <button type="button" class="opcao" data-escolha="periodo" data-valor="tarde">Tarde</button>
+          <button type="button" class="opcao" data-escolha="periodo" data-valor="noite">Noite</button>
+          <button type="button" class="opcao" data-escolha="periodo" data-valor="tanto-faz">Tanto faz</button>
+        </div>
+      </section>
+
+      <section data-passo="resumo" hidden>
+        <h2 class="triagem-titulo-passo" tabindex="-1">Sua mensagem está pronta</h2>
+        <p class="triagem-explica">Confira e toque no botão para abrir o WhatsApp. Dá para editar antes de enviar.</p>
+        <p id="triagem-previa" class="triagem-previa"></p>
+        <a id="triagem-abrir" class="botao botao-escuro botao-largo" href="#">
+          <svg class="icone" aria-hidden="true"><use href="#i-whatsapp"/></svg>Abrir WhatsApp
+        </a>
+      </section>
+
+      <p class="triagem-rodape"><a id="triagem-pular" href="#">Pular e falar direto no WhatsApp</a></p>
+    </div>
+  </dialog>
 
 </body>
 </html>
