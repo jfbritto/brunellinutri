@@ -25,7 +25,10 @@
     'tanto-faz': { rotulo: 'Tanto faz', mensagem: '' }
   };
 
-  var MEIOS_PAGOS = ['cpc', 'paid', 'ads', 'anuncio'];
+  // utm_medium de mídia paga (cpc, cpm, paid_social, ads...) e ids de clique de anúncio do Google.
+  // fbclid fica de fora: o Meta o acrescenta também em links orgânicos.
+  var MEIO_PAGO = /^(cpc|cpm|ppc|cpv|ads?|anuncio|display|paid([_-]?[a-z]+)?)$/;
+  var IDS_DE_ANUNCIO = ['gclid', 'gbraid', 'wbraid'];
 
   var FONTES = {
     'instagram': 'Instagram', 'ig': 'Instagram',
@@ -38,11 +41,15 @@
     'claude': 'Claude', 'claude.ai': 'Claude'
   };
 
-  // Ordem importa: gemini.google.com antes de google.
+  // Ordem importa: gemini.google.com antes de google. Os nomes de pacote vêm de
+  // referrers android-app:// (app do Google, do Instagram e do Facebook no Android).
   var REFERENCIAS = [
     [/(^|\.)gemini\.google\./, 'Gemini'],
     [/(^|\.)instagram\.com$/, 'Instagram'],
+    [/^com\.instagram\.android$/, 'Instagram'],
     [/(^|\.)facebook\.com$/, 'Facebook'],
+    [/^com\.facebook\.(katana|lite)$/, 'Facebook'],
+    [/^com\.google\.android\./, 'Google'],
     [/(^|\.)google\./, 'Google'],
     [/(^|\.)(copilot\.microsoft\.com|bing\.com)$/, 'Bing'],
     [/(^|\.)chatgpt\.com$/, 'ChatGPT'],
@@ -58,12 +65,15 @@
   }
 
   function dominio(url) {
-    var m = /^https?:\/\/([^/:?#]+)/i.exec(url || '');
+    var m = /^(?:https?|android-app):\/\/([^/:?#]+)/i.exec(url || '');
     return m ? m[1].toLowerCase() : '';
   }
 
   function detectarOrigem(busca, referrer) {
-    if (MEIOS_PAGOS.indexOf(parametro(busca, 'utm_medium')) !== -1) return 'anúncio';
+    if (MEIO_PAGO.test(parametro(busca, 'utm_medium'))) return 'anúncio';
+    for (var k = 0; k < IDS_DE_ANUNCIO.length; k++) {
+      if (parametro(busca, IDS_DE_ANUNCIO[k])) return 'anúncio';
+    }
     var fonte = FONTES[parametro(busca, 'utm_source')];
     if (fonte) return fonte;
     var host = dominio(referrer);

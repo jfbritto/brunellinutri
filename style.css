@@ -13,7 +13,7 @@
   --creme: #F6F1EA;
   --areia: #ECE3D6;
   --terracota: #B9825F;        /* só decoração */
-  --terracota-texto: #8E5B3B;  /* versão com contraste AA sobre creme e areia */
+  --terracota-texto: #845537;  /* versão com contraste AA sobre creme (5,6:1) e areia (4,9:1) */
   --texto: #22343A;
   --texto-suave: #55676B;
   --branco: #FFFFFF;
@@ -55,11 +55,17 @@ img { height: auto; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 
+/* Anel de foco com contraste de pelo menos 3:1: escuro nas seções claras, claro nas escuras */
 :focus-visible {
-  outline: 3px solid var(--marca);
+  outline: 3px solid var(--profundo);
   outline-offset: 3px;
   border-radius: 6px;
 }
+.topo :focus-visible,
+.secao-profunda :focus-visible,
+.rodape :focus-visible,
+.barra-fixa :focus-visible,
+.cabecalho:not(.rolado) :focus-visible { outline-color: var(--marca-clara); }
 
 .pular-conteudo {
   position: absolute;
@@ -222,8 +228,19 @@ button { font: inherit; color: inherit; }
   font-size: clamp(2rem, 8.4vw, 3.7rem);
   line-height: 1.05;
   letter-spacing: -0.015em;
-  margin: 10px 0 12px;
+  margin: 0 0 12px;
   font-variation-settings: "opsz" 144;
+}
+/* nome e função dentro do h1, no estilo de sobretítulo */
+.topo-titulo .sobretitulo {
+  display: block;
+  margin-bottom: 12px;
+  font-family: var(--fonte-texto);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  font-variation-settings: normal;
 }
 .topo-titulo em { font-style: italic; color: var(--marca-clara); }
 
@@ -531,7 +548,7 @@ html:not(.js) .podcast-player { display: none; }
 .podcast-player iframe { display: block; width: 100%; height: 232px; border: 0; border-radius: 14px; }
 
 .podcast-links { font-size: 0.9rem; }
-.podcast-links a { color: var(--branco); text-underline-offset: 3px; }
+.podcast-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--branco); text-underline-offset: 3px; }
 .podcast-links span { margin: 0 8px; opacity: 0.6; }
 
 /* --- Perguntas frequentes --- */
@@ -576,17 +593,19 @@ html:not(.js) .podcast-player { display: none; }
 .rodape-interno { max-width: var(--largura); margin: 0 auto; }
 .rodape .logo { width: 150px; margin: 0 auto 20px; filter: brightness(0) invert(1); opacity: 0.92; }
 .rodape p + p { margin-top: 6px; }
-.rodape a { color: var(--branco); text-underline-offset: 3px; }
+.rodape a { display: inline-flex; align-items: center; min-height: 44px; color: var(--branco); text-underline-offset: 3px; }
 .rodape-copy { opacity: 0.7; }
 
-/* --- Barra fixa (celular) --- */
+/* --- Barra fixa (celular e tablet, onde o cabeçalho não tem as âncoras) --- */
 .barra-fixa { display: none; }
 
-@media (max-width: 767px) {
+@media (max-width: 1099px) {
   html.js .barra-fixa {
     position: fixed;
     left: 12px;
     right: 12px;
+    max-width: 520px;
+    margin: 0 auto;
     bottom: calc(12px + env(safe-area-inset-bottom));
     z-index: 40;
     display: grid;
@@ -619,6 +638,7 @@ html:not(.js) .podcast-player { display: none; }
 }
 
 /* --- Triagem --- */
+.triagem:not([open]) { display: none; } /* navegadores sem suporte a <dialog> */
 .triagem {
   width: 100%;
   max-width: 100%;
@@ -666,7 +686,14 @@ html:not(.js) .podcast-player { display: none; }
 .triagem-botao[data-oculto] { visibility: hidden; }
 .triagem-fechar { justify-self: end; font-size: 1.7rem; line-height: 1; font-weight: 300; }
 
-.triagem-progresso { display: flex; gap: 6px; margin-bottom: 20px; }
+.triagem-progresso { display: flex; gap: 6px; margin-bottom: 16px; }
+
+.triagem-escolhas {
+  margin: -4px 0 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--terracota-texto);
+}
 .triagem-progresso span { flex: 1; height: 4px; border-radius: 4px; background: var(--areia); transition: background 0.25s ease; }
 .triagem-progresso span.feito { background: var(--profundo); }
 
@@ -712,8 +739,15 @@ html:not(.js) .podcast-player { display: none; }
   line-height: 1.5;
 }
 
-.triagem-rodape { margin-top: 18px; text-align: center; font-size: 0.85rem; }
-.triagem-rodape a { color: var(--texto-suave); text-underline-offset: 3px; }
+.triagem-rodape { margin-top: 10px; text-align: center; font-size: 0.85rem; }
+.triagem-rodape a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  color: var(--texto-suave);
+  text-underline-offset: 3px;
+}
 .triagem-rodape[data-oculto] { display: none; }
 
 /* --- Revelação ao rolar (só com JS e sem movimento reduzido) --- */
@@ -740,7 +774,9 @@ html.js .revelar.revelado { opacity: 1; transform: none; }
 
   .triagem { margin: auto; max-width: 520px; border-radius: 26px; }
   .triagem-caixa { padding: 18px 28px 28px; }
+}
 
+@media (min-width: 1100px) {
   .rodape { padding-bottom: 52px; }
 }
 
@@ -813,5 +849,6 @@ html.js .revelar.revelado { opacity: 1; transform: none; }
 /* --- Impressão --- */
 @media print {
   .cabecalho, .barra-fixa, .faixa, .triagem, .podcast-player { display: none !important; }
+  html.js .revelar { opacity: 1 !important; transform: none !important; }
   .topo, .secao-profunda, .rodape { background: none; color: #000; }
 }

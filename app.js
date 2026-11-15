@@ -55,6 +55,7 @@
     const pular = doc.getElementById('triagem-pular');
     const abrirWhats = doc.getElementById('triagem-abrir');
     const previa = doc.getElementById('triagem-previa');
+    const escolhas = doc.getElementById('triagem-escolhas');
     const rodape = pular.closest('.triagem-rodape');
     const barras = dialogo.querySelectorAll('.triagem-progresso span');
 
@@ -89,9 +90,14 @@
         rodape.removeAttribute('data-oculto');
       }
 
-      passos[passo].querySelectorAll('[data-escolha]').forEach((b) => {
-        b.setAttribute('aria-pressed', String(estado[b.dataset.escolha] === b.dataset.valor));
-      });
+      // O que já foi escolhido (inclusive o motivo vindo do cartão) fica à vista.
+      const marcados = [
+        L.LOCAIS[estado.local] && L.LOCAIS[estado.local].rotulo,
+        L.MOTIVOS[estado.motivo] && L.MOTIVOS[estado.motivo].rotulo,
+        L.PERIODOS[estado.periodo] && L.PERIODOS[estado.periodo].rotulo
+      ].filter(Boolean);
+      escolhas.textContent = marcados.join(' · ');
+      escolhas.hidden = passo === 'resumo' || !marcados.length;
     }
 
     function focarTitulo() {
@@ -111,13 +117,24 @@
     }
 
     // Gatilhos: qualquer [data-triagem] da página (clique com modificador abre o link normal).
+    // Se abrir a triagem falhar, o clique segue como link comum para o WhatsApp.
     doc.addEventListener('click', (ev) => {
       const el = ev.target.closest('[data-triagem]');
       if (!el || ev.defaultPrevented) return;
       if (ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
-      ev.preventDefault();
-      abrir(el);
+      try {
+        abrir(el);
+        ev.preventDefault();
+      } catch (e) {
+        console.error('[triagem]', e);
+        if (dialogo.open) dialogo.close();
+      }
     });
+
+    // Só fecha pelo fundo escurecido quando o toque começa e termina nele
+    // (arrastar uma seleção de texto até o fundo não fecha).
+    let toqueComecouNoFundo = false;
+    dialogo.addEventListener('pointerdown', (ev) => { toqueComecouNoFundo = ev.target === dialogo; });
 
     dialogo.addEventListener('click', (ev) => {
       const opcao = ev.target.closest('[data-escolha]');
@@ -128,7 +145,8 @@
         focarTitulo();
         return;
       }
-      if (ev.target === dialogo) dialogo.close(); // toque fora da caixa (no fundo escurecido)
+      if (ev.target === dialogo && toqueComecouNoFundo) dialogo.close();
+      toqueComecouNoFundo = false;
     });
 
     voltar.addEventListener('click', () => {

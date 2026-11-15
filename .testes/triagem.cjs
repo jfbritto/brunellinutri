@@ -184,6 +184,37 @@ caso('abas mudam com clique e com as setas do teclado', async (page) => {
   assert.equal(await page.locator('#painel-online').isVisible(), false);
 });
 
+caso('linha de escolhas mostra o que já foi marcado, inclusive pelo cartão', async (page) => {
+  await abrirPorta(page, 'bariatrica-pos');
+  await abrirPor(page, '[data-motivo="bariatrica-pos"]');
+  assert.match(await page.textContent('#triagem-escolhas'), /Pós-operatório de bariátrica/);
+  await escolher(page, 'local', 'vitoria');
+  assert.match(await page.textContent('#triagem-escolhas'), /Presencial em Vitória/);
+  await escolher(page, 'periodo', 'manha');
+  assert.equal(await page.locator('#triagem-escolhas').isVisible(), false, 'no resumo a prévia já mostra tudo');
+  assert.equal(await page.locator('#triagem [aria-pressed]').count(), 0, 'opções não são botões de alternância');
+});
+
+caso('arrastar a seleção até o fundo não fecha; tocar no fundo fecha', async (page) => {
+  await abrirPor(page, '.topo-botoes [data-local="online"]');
+  await escolher(page, 'motivo', 'obesidade');
+  await escolher(page, 'periodo', 'tarde');
+  const caixa = await page.locator('#triagem-previa').boundingBox();
+  await page.mouse.move(caixa.x + 20, caixa.y + 10);
+  await page.mouse.down();
+  await page.mouse.move(195, 15, { steps: 5 });
+  await page.mouse.up();
+  assert.equal(await triagemAberta(page), true, 'fechou ao arrastar seleção');
+  await page.mouse.click(195, 15);
+  await page.waitForFunction(() => !document.getElementById('triagem').open, null, { timeout: 2000 });
+});
+
+caso('h1 traz o nome e a função', async (page) => {
+  const h1 = await page.textContent('h1');
+  assert.match(h1, /Brunelli Sperandio Busteke/);
+  assert.match(h1, /Nutricionista clínica/);
+});
+
 caso('podcast só carrega o player ao tocar', async (page) => {
   assert.equal(await page.locator('.podcast-player iframe').count(), 0);
   await page.locator('.podcast-play').scrollIntoViewIfNeeded();

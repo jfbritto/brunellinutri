@@ -23,6 +23,21 @@ test('utm_medium de anúncio vence o utm_source', () => {
   assert.equal(L.detectarOrigem('?utm_source=meta&utm_medium=Paid', ''), 'anúncio');
 });
 
+test('outros meios pagos e clique de anúncio do Google contam como anúncio', () => {
+  assert.equal(L.detectarOrigem('?utm_source=fb&utm_medium=paid_social', ''), 'anúncio');
+  assert.equal(L.detectarOrigem('?utm_source=ig&utm_medium=cpm', ''), 'anúncio');
+  assert.equal(L.detectarOrigem('?gclid=abc123', ''), 'anúncio');
+  assert.equal(L.detectarOrigem('?gbraid=x', 'https://www.google.com/'), 'anúncio');
+  assert.equal(L.detectarOrigem('?utm_source=instagram&utm_medium=social', ''), 'Instagram');
+  assert.equal(L.detectarOrigem('?fbclid=abc', ''), '', 'fbclid aparece também em links orgânicos');
+});
+
+test('referrer de apps no Android', () => {
+  assert.equal(L.detectarOrigem('', 'android-app://com.google.android.googlequicksearchbox/'), 'Google');
+  assert.equal(L.detectarOrigem('', 'android-app://com.instagram.android'), 'Instagram');
+  assert.equal(L.detectarOrigem('', 'android-app://com.facebook.katana/'), 'Facebook');
+});
+
 test('utm_source desconhecido ou ausente cai no referrer', () => {
   assert.equal(L.detectarOrigem('?utm_source=xyz', 'https://www.google.com/'), 'Google');
   assert.equal(L.detectarOrigem('', 'https://gemini.google.com/app'), 'Gemini');
